@@ -1,0 +1,46 @@
+{ 
+  "name" : "paradox-3d-renderer",
+  "external-libraries" :
+  [
+    {
+      "os" : [ "windows", "linux" ],
+      "name" : "OpenGL-Registry",
+      "config" : { "git" : "https://github.com/KhronosGroup/OpenGL-Registry", "version" : "main" }
+    },
+    {
+      "os" : [ "windows", "linux" ],
+      "name" : "Vulkan-Headers",
+      "config" : {"git" : "https://github.com/KhronosGroup/Vulkan-Headers", "version" : "v1.3.289"}
+    }
+  ],
+
+  "paradox-libraries" :
+  [
+    {
+      "name" : "paradox-platform",
+      "config" : { "version" : "main" }
+    },
+    {
+      "name" : "paradox-application",
+      "config" : { "version" : "main" }
+    }
+  ],
+
+  "build" :
+  [
+    {
+      "name" : "paradox-3d-renderer",
+      "type" : "library",
+      "sources" : [{ "repo" : "paradox-3d-renderer", "library" : "paradox-3d-renderer" , "directory" : "paradox-3d-renderer" }],
+      "includes" :
+      [
+        { "repo" : "paradox-3d-renderer" , "library" : "paradox-3d-renderer" },
+        { "repo" : "paradox-application" , "library" : "paradox-application" },
+        { "repo" : "paradox-platform", "library" : "paradox-platform" },
+        { "repo" : "OpenGL-Registry" , "directory" : "api" },
+        { "repo" : "Vulkan-Headers" , "directory" : "include" }
+      ],
+      "libraries" : [ { "name" : "paradox-platform" }, { "name" : "paradox-application" } ]
+    }
+  ]
+}
