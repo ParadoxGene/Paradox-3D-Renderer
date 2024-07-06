@@ -2,6 +2,7 @@
 #define PARADOX_SOFTWARE_C_HEADER_3D_RENDERER_OPENGL
 
 #include <GL/glcorearb.h>
+#include <paradox-platform/defines.h>
 
 GLAPI void APIENTRY paradox_opengl_load_functions();
 GLAPI void APIENTRY paradox_opengl_load_function(paradox_str_t name, void** function_ptr);

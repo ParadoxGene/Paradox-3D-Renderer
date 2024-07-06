@@ -14,11 +14,6 @@
     },
     {
       "os" : [ "windows", "linux" ],
-      "name" : "GLEW",
-      "config" : { "git" : "https://github.com/nigels-com/glew", "version" : "glew-2.2.0" }
-    },
-    {
-      "os" : [ "windows", "linux" ],
       "name" : "Vulkan-Headers",
       "config" : {"git" : "https://github.com/KhronosGroup/Vulkan-Headers", "version" : "v1.3.289"}
     }
@@ -48,6 +43,7 @@
         { "repo" : "paradox-application", "library" : "paradox-desktop" },
         { "repo" : "paradox-application", "library" : "paradox-application" },
         { "repo" : "paradox-platform", "library" : "paradox-platform" },
+        { "repo" : "glfw", "directory" : "include" },
         { "repo" : "OpenGL-Registry" , "directory" : "api" },
         { "repo" : "EGL-Registry" , "directory" : "api" },
         { "repo" : "Vulkan-Headers" , "directory" : "include" }
