@@ -48,7 +48,7 @@
         { "repo" : "EGL-Registry" , "directory" : "api" },
         { "repo" : "Vulkan-Headers" , "directory" : "include" }
       ],
-      "libraries" : [ { "name" : "paradox-platform" }, { "name" : "paradox-desktop" }, { "name" : "opengl32" } ]
+      "libraries" : [ { "name" : "paradox-platform" }, { "name" : "paradox-desktop" } ]
     }
   ]
 }
