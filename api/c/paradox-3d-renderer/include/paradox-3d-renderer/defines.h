@@ -1,7 +1,7 @@
-#ifndef PARADOX_WORKS_C_3D_RENDERER_DEFINES_H
-#define PARADOX_WORKS_C_3D_RENDERER_DEFINES_H
+#ifndef PARADOX_SOFTWARE_C_HEADER_3D_RENDERER_DEFINES
+#define PARADOX_SOFTWARE_C_HEADER_3D_RENDERER_DEFINES
 
-#include <paradox-platform/defines.h>
+#include <paradox-application/defines.h>
 
 #ifdef PARADOX_3D_RENDERER_STATIC
     #define PARADOX_3D_RENDERER_API

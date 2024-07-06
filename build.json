@@ -9,6 +9,16 @@
     },
     {
       "os" : [ "windows", "linux" ],
+      "name" : "EGL-Registry",
+      "config" : { "git" : "https://github.com/KhronosGroup/EGL-Registry", "version" : "main" }
+    },
+    {
+      "os" : [ "windows", "linux" ],
+      "name" : "GLEW",
+      "config" : { "git" : "https://github.com/nigels-com/glew", "version" : "glew-2.2.0" }
+    },
+    {
+      "os" : [ "windows", "linux" ],
       "name" : "Vulkan-Headers",
       "config" : {"git" : "https://github.com/KhronosGroup/Vulkan-Headers", "version" : "v1.3.289"}
     }
@@ -35,12 +45,14 @@
       "includes" :
       [
         { "repo" : "paradox-3d-renderer" , "library" : "paradox-3d-renderer" },
-        { "repo" : "paradox-application" , "library" : "paradox-application" },
+        { "repo" : "paradox-application", "library" : "paradox-desktop" },
+        { "repo" : "paradox-application", "library" : "paradox-application" },
         { "repo" : "paradox-platform", "library" : "paradox-platform" },
         { "repo" : "OpenGL-Registry" , "directory" : "api" },
+        { "repo" : "EGL-Registry" , "directory" : "api" },
         { "repo" : "Vulkan-Headers" , "directory" : "include" }
       ],
-      "libraries" : [ { "name" : "paradox-platform" }, { "name" : "paradox-application" } ]
+      "libraries" : [ { "name" : "paradox-platform" }, { "name" : "paradox-desktop" }, { "name" : "opengl32" } ]
     }
   ]
 }
