@@ -2,10 +2,15 @@
 #include <paradox-3d-renderer/opengl.h>
 #include <paradox-application/gl_config.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 PARADOX_3D_RENDERER_API paradox_shader* paradox_create_shader(paradox_shader_type_t type, paradox_str_t source)
 {
     paradox_shader* shader = malloc(sizeof(paradox_shader));
+    paradox_init_shader(shader, type, source);
+}
+PARADOX_3D_RENDERER_API void paradox_init_shader(paradox_shader* shader, paradox_shader_type_t type, paradox_str_t source)
+{
     shader->type = type;
     shader->source = source;
     switch(paradox_gl_api_mode())
@@ -35,20 +40,24 @@ PARADOX_3D_RENDERER_API paradox_shader* paradox_create_shader(paradox_shader_typ
         break; }
     }
 }
-PARADOX_3D_RENDERER_API void paradox_destroy_shader(paradox_shader* shader)
+PARADOX_3D_RENDERER_API void paradox_clear_shader(paradox_shader* shader)
 {
     if(shader) switch(paradox_gl_api_mode())
     {
     case PARADOX_OPENGL_API: {
         glDeleteShader(shader->id);
+        shader->id = 0;
         break; }
     }
-    free(shader);
 }
 
 PARADOX_3D_RENDERER_API paradox_shader_program* paradox_create_shader_program()
 {
     paradox_shader_program* program = malloc(sizeof(paradox_shader_program));
+    paradox_init_shader_program(program);
+}
+PARADOX_3D_RENDERER_API void paradox_init_shader_program(paradox_shader_program* program)
+{
     switch(paradox_gl_api_mode())
     {
     case PARADOX_OPENGL_API: {
@@ -56,15 +65,15 @@ PARADOX_3D_RENDERER_API paradox_shader_program* paradox_create_shader_program()
         break; }
     }
 }
-PARADOX_3D_RENDERER_API void paradox_destroy_shader_program(paradox_shader_program* program)
+PARADOX_3D_RENDERER_API void paradox_clear_shader_program(paradox_shader_program* program)
 {
     if(program) switch(paradox_gl_api_mode())
     {
     case PARADOX_OPENGL_API: {
         glDeleteProgram(program->id);
+        program->id = 0;
         break; }
     }
-    free(program);
 }
 
 PARADOX_3D_RENDERER_API paradox_uint32_t paradox_link_shader_program(paradox_shader_program* program, paradox_shader* shaders, paradox_uint32_t count)

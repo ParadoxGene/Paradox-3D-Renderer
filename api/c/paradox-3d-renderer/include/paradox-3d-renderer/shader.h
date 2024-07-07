@@ -26,11 +26,13 @@ typedef struct paradox_shader_program
 } paradox_shader_program;
 
 PARADOX_3D_RENDERER_API paradox_shader* paradox_create_shader(paradox_shader_type_t type, paradox_str_t source);
-PARADOX_3D_RENDERER_API void paradox_destroy_shader(paradox_shader* shader);
+PARADOX_3D_RENDERER_API void paradox_init_shader(paradox_shader* shader, paradox_shader_type_t type, paradox_str_t source);
+PARADOX_3D_RENDERER_API void paradox_clear_shader(paradox_shader* shader);
 
 
 PARADOX_3D_RENDERER_API paradox_shader_program* paradox_create_shader_program();
-PARADOX_3D_RENDERER_API void paradox_destroy_shader_program(paradox_shader_program* program);
+PARADOX_3D_RENDERER_API void paradox_init_shader_program(paradox_shader_program* program);
+PARADOX_3D_RENDERER_API void paradox_clear_shader_program(paradox_shader_program* program);
 
 PARADOX_3D_RENDERER_API paradox_uint32_t paradox_link_shader_program(paradox_shader_program* program, paradox_shader* shaders, paradox_uint32_t count);
 
