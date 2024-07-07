@@ -8,6 +8,7 @@ PARADOX_3D_RENDERER_API paradox_shader* paradox_create_shader(paradox_shader_typ
 {
     paradox_shader* shader = malloc(sizeof(paradox_shader));
     paradox_init_shader(shader, type, source);
+    return shader;
 }
 PARADOX_3D_RENDERER_API void paradox_init_shader(paradox_shader* shader, paradox_shader_type_t type, paradox_str_t source)
 {
@@ -55,6 +56,7 @@ PARADOX_3D_RENDERER_API paradox_shader_program* paradox_create_shader_program()
 {
     paradox_shader_program* program = malloc(sizeof(paradox_shader_program));
     paradox_init_shader_program(program);
+    return program;
 }
 PARADOX_3D_RENDERER_API void paradox_init_shader_program(paradox_shader_program* program)
 {

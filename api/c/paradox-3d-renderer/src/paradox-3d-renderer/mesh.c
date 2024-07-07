@@ -11,6 +11,7 @@ PARADOX_3D_RENDERER_API paradox_mesh* paradox_create_mesh(
 {
     paradox_mesh* mesh = malloc(sizeof(paradox_mesh));
     paradox_init_mesh(mesh, vertices, vertices_count, indices, indices_count, textures, textures_count);
+    return mesh;
 }
 
 PARADOX_3D_RENDERER_API void paradox_init_mesh(

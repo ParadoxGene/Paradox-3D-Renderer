@@ -7,6 +7,7 @@ PARADOX_3D_RENDERER_API paradox_texture* paradox_create_texture()
 {
     paradox_texture* texture = malloc(sizeof(paradox_texture));
     paradox_init_texture(texture);
+    return texture;
 }
 PARADOX_3D_RENDERER_API void paradox_init_texture(paradox_texture* texture)
 {
