@@ -8,8 +8,13 @@ typedef struct paradox_vertex {
     paradox_float32_t tex_coords[2];
 } paradox_vertex;
 
-PARADOX_3D_RENDERER_API void paradox_set_vertex_position(paradox_vertex* vertex, paradox_float32_t position[]);
-PARADOX_3D_RENDERER_API void paradox_set_vertex_normal(paradox_vertex* vertex, paradox_float32_t normal[]);
-PARADOX_3D_RENDERER_API void paradox_set_vertex_tex_coords(paradox_vertex* vertex, paradox_float32_t tex_coords[]);
+PARADOX_3D_RENDERER_API void paradox_set_vertex_position3f(paradox_vertex* vertex, paradox_float32_t* position);
+PARADOX_3D_RENDERER_API void paradox_set_vertex_position(paradox_vertex* vertex, paradox_float32_t x, paradox_float32_t y, paradox_float32_t z);
+
+PARADOX_3D_RENDERER_API void paradox_set_vertex_normal3f(paradox_vertex* vertex, paradox_float32_t* normal);
+PARADOX_3D_RENDERER_API void paradox_set_vertex_normal(paradox_vertex* vertex, paradox_float32_t r, paradox_float32_t g, paradox_float32_t b);
+
+PARADOX_3D_RENDERER_API void paradox_set_vertex_tex_coords2f(paradox_vertex* vertex, paradox_float32_t* tex_coords);
+PARADOX_3D_RENDERER_API void paradox_set_vertex_tex_coords(paradox_vertex* vertex, paradox_float32_t u, paradox_float32_t v);
 
 #endif
