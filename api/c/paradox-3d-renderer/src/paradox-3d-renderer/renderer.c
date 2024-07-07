@@ -1,6 +1,5 @@
 #include <paradox-3d-renderer/renderer.h>
 #include <paradox-3d-renderer/opengl.h>
-
 #include <paradox-application/gl_config.h>
 
 PARADOX_3D_RENDERER_API paradox_float32_t paradox_3d_renderer_clear_color[4];
