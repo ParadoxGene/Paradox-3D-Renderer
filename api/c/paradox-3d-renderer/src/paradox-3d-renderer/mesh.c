@@ -35,10 +35,10 @@ PARADOX_3D_RENDERER_API void paradox_init_mesh(
         glBindVertexArray(mesh->api.opengl->vao);
         glBindBuffer(GL_ARRAY_BUFFER, mesh->api.opengl->vbo);
 
-        glBufferData(GL_ARRAY_BUFFER, vertices_count * sizeof(paradox_vertex), &vertices[0], GL_STATIC_DRAW);  
+        glBufferData(GL_ARRAY_BUFFER, vertices_count * sizeof(paradox_vertex), vertices, GL_STATIC_DRAW);  
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->api.opengl->ebo);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_count * sizeof(paradox_uint32_t), &indices[0], GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_count * sizeof(paradox_uint32_t), indices, GL_STATIC_DRAW);
 
         // vertex positions
         glEnableVertexAttribArray(0);	
